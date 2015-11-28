@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ACME Corp</title>
+    <link rel="stylesheet" href="acme.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+    var body = document.querySelector("body");
+    var header =document.createElement("header");
+    body.appendChild(header);
+    var nav = document.createElement("nav");
+    header.appendChild(nav);
+    var picture = document.createElement("img");
+    var button = document.createElement("button");
+    button.textContent = "Sign Up";
+    nav.appendChild(button);
+    var ulist = document.createElement("ul");
+    nav.appendChild(ulist);
+    var list = document.createElement("li");
+    list.textContent = "Products"
+    ulist.appendChild(list);
+
+
+    </script>
+  </body>
+</html>
