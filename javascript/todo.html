@@ -6,19 +6,57 @@
 function createListItem(textContent) {
 
 var li = document.createElement("li");
-li.textContent = tectContent;
+li.textContent = textContent;
 var ul = document.querySelector("ul");
 ul.appendChild(li);
 
 }
-
-createListItem ();
-createListItem ("whatever I want");
-createLIstItem ("something else?");
-createListItem ()
-
-// var names can be changed to anything we want
+//quotes around li means its string, looking for object literal
+//string: length, toLowerCase(), toUpperCase(), split()
 
 
 
+var newListItem = document.createElement("li");
+//sets new li element
+//returns new element
+newListItem.textContent = "finish homework";
+//new list item's text content
+//amanda.question = amanda's question
+var parentList = document.querySelector("ul");
+//finding ul through querySelector=method/function or verb
+//if more than one ul takes 1st element that matches selecto
+//querySelector = css selector = class/id/pseudoselector
+//document=DOM/HTML/the whole page/object
+//use "body"
+parentList.appendChild(newListItem);
+//puts el in ul in this case bc ul already on pg
+//bc the ul is in DOM and not hidden in css, you see it
+//call parent li's appendChild method and pass in newListItem as an argument
+//adding child to parent
+
+function makeElementWithTextContent(tagName, text, parent) {
+  //functions are a way of genericizing functionality
+  var newElement = document.createElement(tagName);
+  newElement.textContent = "text";
+  var parentElement = document.querySelector(parent);
+  parentElement.appendChild(newElement);
+  return newElement;
+}
+function makeElementWithTextContent ("li", "finishhomework", "ul" )
+
+function makeElementWithTextContent ("a", "products", "header li: first child")
+//set an attr to an element
+var el = document.querySelector("img");
+         .createElement ("img");
+         el.setAttribute(src, "http://");
+
+var a = document.querySelector("a");
+        .createListItem("a");
+        a.setAttribute(href, "http://");
+
+//el.classlist.add
+//            .remove
+//            .toggle (remove if present, add if not present)
+  
+</address>
 </script>

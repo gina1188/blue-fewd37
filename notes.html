@@ -1,0 +1,35 @@
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+
+<script>
+var listItem = document.querySelector("li");
+listItem.setAttribute("style", "color: red");
+</script>
+
+<style media="screen">
+  .done {
+    color: rgb(193, 193, 193);
+    text-decoration: line-through
+  }
+</style>
+
+<ul>
+  <li class-"done">one</li>
+  <li onclick="toggleCompleted()">two</li>
+  <li>three</li>
+</ul>
+
+<script type="text/javascript">
+  var listItem = document.querySelector ("li");
+  listItem.addEventListener("click", itemClicked);
+
+  function itemClicked(event) {
+    listItem.classlist.add("done");
+  }
+
+  //classlist = add(), remove(), toggle()
+  //
+</script>
