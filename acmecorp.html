@@ -10,19 +10,55 @@
     var body = document.querySelector("body");
     var header =document.createElement("header");
     body.appendChild(header);
+
+    var img = document.createElement("img");
+    img.src = "file:///Users/glam/Code/blue-fewd37/images/acme-corp.jpg";
+    var src = document.querySelector("header");
+    src.appendChild(img);
+
     var nav = document.createElement("nav");
     header.appendChild(nav);
-    var picture = document.createElement("img");
+
+    var ulist = document.createElement("ul");
+    nav.appendChild(ulist);
+
+    var list = document.createElement("li");
+    ulist.appendChild(list);
+
+    var a = document.createElement("a");
+    a.setAttribute('href', "#" );
+    a.textContent = "Products";
+    nav.appendChild(a);
+
     var button = document.createElement("button");
     button.textContent = "Sign Up";
     nav.appendChild(button);
-    var ulist = document.createElement("ul");
-    nav.appendChild(ulist);
-    var list = document.createElement("li");
-    list.textContent = "Products"
-    ulist.appendChild(list);
 
+    var main = document.createElement("main");
+    body.appendChild(main);
 
+    var section = document.createElement("section")
+    main.appendChild(section);
+
+    var h1 = document.createElement("h1");
+    h1.textContent = "Welcome to ACME Corp!";
+    section.appendChild(h1);
+
+    var para = document.createElement("p");
+    para.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    section.appendChild(para);
+
+    var para2 = document.createElement("p2");
+    para2.textContent = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    section.appendChild(para2);
+
+    var footer = document.createElement("footer");
+    body.appendChild(footer);
+
+    var para3 = document.createElement("para3");
+    para3.textContent = "Copyright, 2015";
+    footer.appendChild(para3);
+    
     </script>
   </body>
 </html>
