@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stoplight</title>
+
+    <style media="screen">
+      button {
+        background-color: white;
+        color: black;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 15px;
+        width: 100px;
+        margin-right: 20px;
+      }
+      .traffic-light {
+        height: 550px;
+        width: 200px;
+        background-color: rgb(238, 187, 8);
+        border-radius: 30px;
+        border: 1px solid rgb(208,194,132);
+        margin: 40px auto 40px auto;
+        padding: 20px;
+      }
+      .stopbulb {
+        height: 150px;
+        width: 150px;
+        background-color: rgb(91, 70, 2);
+        border-radius: 50%;
+        margin: 25px auto 25px auto;
+      }
+      .slowbulb {
+        height: 150px;
+        width: 150px;
+        background-color: rgb(91, 70, 2);
+        border-radius: 50%;
+        margin: 25px auto 25px auto;
+      }
+      .gobulb {
+        height: 150px;
+        width: 150px;
+        background-color: rgb(91, 70, 2);
+        border-radius: 50%;
+        margin: 25px auto 25px auto;
+      }
+
+    </style>
+  </head>
+  <body>
+  <script type="text/javascript">
+
+  var body = document.querySelector("body");
+  var nav = document.createElement("nav");
+  body.appendChild(nav);
+
+  var ul = document.createElement ("ul");
+  nav.appendChild(ul);
+
+  var buttonOne = document.createElement("button");
+  buttonOne.textContent = "Stop";
+  nav.appendChild(buttonOne);
+
+  var buttonTwo = document.createElement("button");
+  buttonTwo.textContent = "Slow";
+  nav.appendChild(buttonTwo);
+
+  var buttonThree = document.createElement("button");
+  buttonThree.textContent = "Go";
+  nav.appendChild(buttonThree);
+
+  var trafficLight = document.createElement("div");
+  trafficLight.className = "traffic-light";
+  body.appendChild(trafficLight);
+
+  var stopLight = document.createElement("div");
+  stopLight.className = "stopbulb";
+  trafficLight.appendChild(stopLight);
+
+  var slowLight = document.createElement("div");
+  slowLight.className = "slowbulb";
+  trafficLight.appendChild(slowLight);
+
+  var goLight = document.createElement("div");
+  goLight.className = "gobulb";
+  trafficLight.appendChild(goLight);
+
+  buttonOne.addEventListener("click", stop);
+  buttonTwo.addEventListener("click", slow);
+  buttonThree.addEventListener("click", go);
+
+  
+
+
+
+
+
+  </script>
+  </body>
+</html>
