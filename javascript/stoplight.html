@@ -28,21 +28,33 @@
         width: 150px;
         background-color: rgb(91, 70, 2);
         border-radius: 50%;
+        border: 2px solid black;
         margin: 25px auto 25px auto;
       }
-      .slowbulb {
+      .light-stop-light-on {
+        background-color: red;
+      }
+      .slowbulb{
         height: 150px;
         width: 150px;
         background-color: rgb(91, 70, 2);
         border-radius: 50%;
+        border: 2px solid black;
         margin: 25px auto 25px auto;
       }
-      .gobulb {
+      .light-slow-light-on {
+        background-color: yellow;
+      }
+      .gobulb{
         height: 150px;
         width: 150px;
         background-color: rgb(91, 70, 2);
         border-radius: 50%;
+        border: 2px solid black;
         margin: 25px auto 25px auto;
+      }
+      .light-go-light-on {
+        background-color: green;
       }
 
     </style>
@@ -75,25 +87,43 @@
 
   var stopLight = document.createElement("div");
   stopLight.className = "stopbulb";
+
   trafficLight.appendChild(stopLight);
 
   var slowLight = document.createElement("div");
   slowLight.className = "slowbulb";
+
   trafficLight.appendChild(slowLight);
 
   var goLight = document.createElement("div");
   goLight.className = "gobulb";
+
   trafficLight.appendChild(goLight);
 
   buttonOne.addEventListener("click", stop);
   buttonTwo.addEventListener("click", slow);
   buttonThree.addEventListener("click", go);
 
-  
+  function stop(event){
+    event.preventDefault();
+    goLight.classList.remove("light-go-light-on");
+    slowLight.classList.remove("light-slow-light-on");
+    stopLight.classList.add("light-stop-light-on");
+  }
 
+  function slow(event) {
+    event.preventDefault();
+    goLight.classList.remove("light-go-light-on");
+    stopLight.classList.remove("light-stop-light-on");
+    slowLight.classList.add("light-slow-light-on");
+  }
 
-
-
+  function go(event) {
+    event.preventDefault();
+    stopLight.classList.remove("light-stop-light-on");
+    slowLight.classList.remove("light-slow-light-on");
+    goLight.classList.add("light-go-light-on");
+  }
 
   </script>
   </body>
