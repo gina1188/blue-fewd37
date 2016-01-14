@@ -22,6 +22,7 @@
         border: 1px solid rgb(208,194,132);
         margin: 40px auto 40px auto;
         padding: 20px;
+
       }
       .stopbulb {
         height: 150px;
@@ -30,6 +31,10 @@
         border-radius: 50%;
         border: 2px solid black;
         margin: 25px auto 25px auto;
+        box-shadow: inset 0 5px 15px rgba (0, 0, 0, 0.2);
+        border-top width: 10px;
+        border-bottom-width: 1px;
+        transition: background-color 150ms;
       }
       .light-stop-light-on {
         background-color: red;
@@ -41,6 +46,10 @@
         border-radius: 50%;
         border: 2px solid black;
         margin: 25px auto 25px auto;
+        box-shadow: inset 0 5px 15px rgba (0, 0, 0, 0.2);
+        border-top width: 6px;
+        border-bottom-width: 1px;
+        transition: background-color 150ms;
       }
       .light-slow-light-on {
         background-color: yellow;
@@ -52,6 +61,10 @@
         border-radius: 50%;
         border: 2px solid black;
         margin: 25px auto 25px auto;
+        box-shadow: inset 0 5px 15px rgba (0, 0, 0, 0.2);
+        border-top width: 6px;
+        border-bottom-width: 1px;
+        transition: background-color 150ms;
       }
       .light-go-light-on {
         background-color: green;
@@ -123,6 +136,14 @@
     stopLight.classList.remove("light-stop-light-on");
     slowLight.classList.remove("light-slow-light-on");
     goLight.classList.add("light-go-light-on");
+  }
+
+  function caution(event) {
+    event.preventDefault();
+    slow(event);
+    setInterval(function() {
+      stopLight.classList.toggle("stop-light-slow");
+    }, 1000);
   }
 
   </script>

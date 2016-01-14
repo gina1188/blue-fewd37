@@ -1,0 +1,41 @@
+main {
+  text-align: center;
+  padding: 40px;
+  margin: auto;
+}
+
+button {
+  width: 150px;
+  height: 65px;
+  border-radius: 10%;
+  padding: 40px 10px 10px 10px;
+  font-family: Arial;
+  font-size: 16px;
+  background-color: #5CDFE6;
+  margin: auto;
+}
+
+#fog {
+  background-image: url(http://openweathermap.org/img/w/50d.png);
+}
+
+#clear-sky {
+  background-image: url(http://openweathermap.org/img/w/01d.png);
+}
+
+#snow {
+  background-image: url(http://openweathermap.org/img/w/13d.png);
+}
+
+#rain {
+  background-image: url(http://openweathermap.org/img/w/10d.png);
+}
+
+#thunderstorm {
+  background-image: url(http://openweathermap.org/img/w/11d.png);
+}
+
+#scattered-clouds {
+  background-image: url(http://openweathermap.org/img/w/03n.png);
+
+}
