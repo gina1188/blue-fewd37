@@ -1,11 +1,22 @@
+
+header {
+  font-family: Impact;
+  font-size: 75px;
+  text-align: center;
+  margin-top: 60px;
+}
+body {
+  background-color: #97CADB;
+}
+
 main {
   text-align: center;
-  padding: 40px;
+  padding: 100px 40px 50px 50px;
   margin: auto;
 }
 
 button {
-  width: 150px;
+  width: 155px;
   height: 65px;
   border-radius: 10%;
   padding: 40px 10px 10px 10px;
@@ -15,27 +26,46 @@ button {
   margin: auto;
 }
 
-#fog {
-  background-image: url(http://openweathermap.org/img/w/50d.png);
+#cities {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  text-align: center;
+  list-style-type: none;
+  margin-top: 50px;
 }
 
-#clear-sky {
+#Clouds {
+  background-image: url(http://openweathermap.org/img/w/03d.png);
+}
+
+#Clear {
   background-image: url(http://openweathermap.org/img/w/01d.png);
 }
 
-#snow {
+#Snow {
   background-image: url(http://openweathermap.org/img/w/13d.png);
 }
 
-#rain {
+#Rain {
   background-image: url(http://openweathermap.org/img/w/10d.png);
 }
 
-#thunderstorm {
-  background-image: url(http://openweathermap.org/img/w/11d.png);
+#Mist {
+  background-image: url(http://openweathermap.org/img/w/50d.png);
 }
 
-#scattered-clouds {
-  background-image: url(http://openweathermap.org/img/w/03n.png);
+#Haze {
+  background-image: url(http://openweathermap.org/img/w/50d.png);
+
+}
+
+#Fog {
+  background-image: url(http://openweathermap.org/img/w/50d.png);
+
+}
+
+#Drizzle {
+  background-image: url(http://openweathermap.org/img/w/09d.png);
 
 }

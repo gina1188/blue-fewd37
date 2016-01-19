@@ -7,16 +7,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/finalproject.css" media="screen" charset="utf-8">
-
+    <header>
+      City By Weather
+    </header>
   </head>
   <body>
     <main>
-      <button id="fog">Foggy</button>
-      <button id="clear-sky">Clear Sky</button>
-      <button id="snow">Snow</button>
-      <button id="rain">Rain</button>
-      <button id="thunderstorm">Thunderstorm</button>
-      <button id="scattered-clouds">Scattered Clouds</button>
+      <button id="Clouds">Clouds</button>
+      <button id="Clear">Clear</button>
+      <button id="Snow">Snow</button>
+      <button id="Rain">Rain</button>
+      <button id="Mist">Mist</button>
+      <button id="Haze">Haze</button>
+      <button id="Fog">Fog</button>
+      <button id="Drizzle">Drizzle</button>
 
     <ul id="cities">
 
@@ -32,7 +36,7 @@
     var wet = "";
     var allWeather = null;
     var results = [];
-    var keyword = "fog";
+    // var keyword = "fog";
 
     function resultsReceived(data) {
       allWeather = data;
@@ -43,26 +47,40 @@
         alert("Weather data hasn't downloaded yet. Try again in a second.");
         return [];
       }
-
+      
       wet = allWeather.list;
       for (var i = 0; i < wet.length; i++) {
         var weatherList = wet[i];
         for (var j = 0; j < weatherList.weather.length; j++) {
-          var currentWeather = weatherList.weather[j].description;
-          if (keyword==currentWeather){
+          var currentWeather = weatherList.weather[j].main;
+          //console.log('currentWeather', currentWeather);
+          if (weatherCondition==currentWeather){
             results.push(weatherList);
+          } else {
+            alert("No Cities");
+            event.preventDefault;
           }
         }
       }
       return results;
     };
 
-document.querySelector("#fog").addEventListener("click", fogClicked);
+document.querySelector("#Clouds").addEventListener("click", fogClicked);
+document.querySelector("#Clear").addEventListener("click", fogClicked);
+document.querySelector("#Snow").addEventListener("click", fogClicked);
+document.querySelector("#Rain").addEventListener("click", fogClicked);
+document.querySelector("#Mist").addEventListener("click", fogClicked);
+document.querySelector("#Haze").addEventListener("click", fogClicked);
+document.querySelector("#Fog").addEventListener("click", fogClicked);
+document.querySelector("#Drizzle").addEventListener("click", fogClicked);
 
   var list = document.querySelector("#cities");
 
     function fogClicked(event) {
-      var foggyCities = searchCitiesByWeather("fog");
+      event.preventDefault
+      //console.log(event);
+
+      var foggyCities = searchCitiesByWeather(event.srcElement.id);
 
       for (var i = 0; i < foggyCities.length; i++) {
         var foggyCity = foggyCities[i].name;
