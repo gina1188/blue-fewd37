@@ -47,7 +47,7 @@
         alert("Weather data hasn't downloaded yet. Try again in a second.");
         return [];
       }
-      
+
       wet = allWeather.list;
       for (var i = 0; i < wet.length; i++) {
         var weatherList = wet[i];
@@ -56,9 +56,6 @@
           //console.log('currentWeather', currentWeather);
           if (weatherCondition==currentWeather){
             results.push(weatherList);
-          } else {
-            alert("No Cities");
-            event.preventDefault;
           }
         }
       }
