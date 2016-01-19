@@ -26,6 +26,18 @@ button {
   margin: auto;
 }
 
+#firstrow {
+  width:auto;
+  height: auto;
+  display: inline-block;
+}
+
+#secondrow {
+  width:auto;
+  height: auto;
+  display: inline-block;
+}
+
 #cities {
   text-decoration: none;
   font-family: Arial;
