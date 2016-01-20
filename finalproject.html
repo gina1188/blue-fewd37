@@ -86,7 +86,7 @@ document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
 
   function weatherClicked(event) {
     event.preventDefault();
-    list.innerHTML = "";
+    
     var weatherCities = searchCitiesByWeather(event.srcElement.id);
 
     var markers = [] ;
@@ -119,3 +119,4 @@ document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
   }
 
     </script>
+    </html>
