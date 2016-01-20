@@ -32,4 +32,48 @@ listItem.setAttribute("style", "color: red");
 
   //classlist = add(), remove(), toggle()
   //
+
+  var list = document.querySelector("#map");
+
+    function weatherClicked(event) {
+      event.preventDefault();
+      list.innerHTML = "";
+
+      //console.log(event);
+      var weatherCities = searchCitiesByWeather(event.srcElement.id);
+      for (var i = 0; i < weatherCities.length; i++) {
+        var weatherCity = weatherCities[i].name;
+
+      var newLi = document.createElement("li");
+      newLi.className = "city";
+      list.appendChild(newLi);
+
+      var cityList = document.createElement("div");
+      cityList.textContent = weatherCity;
+      newLi.appendChild(cityList);
+
+      }
+    }
+
+  $('#map').vectorMap({map: 'us_aea'});
+
+        var weatherCities = searchCitiesByWeather(event.srcElement.id);
+        var markers = [] ;
+        for (var i = 0; i < weatherCities.length; i++) {
+          var weatherCity = weatherCities[i].name;
+
+          var marker = { name: weatherCities[i].name };
+          var marker.latLng = [weatherCities[i].coord.lat,weatherCities[i].coord.lon];
+          markers.push(marker);
+
+          #map {
+            text-decoration: none;
+            font-family: Arial;
+            font-size: 14px;
+            text-align: center;
+            list-style-type: none;
+            margin-top: 50px;
+
+</html>
+
 </script>

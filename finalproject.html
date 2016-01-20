@@ -7,6 +7,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/finalproject.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.css" media="screen" charset="utf-8">
+    <script type="text/javascript" src="jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.min.js"></script>
+    <script type="text/javascript" src="jquery-jvectormap-2.0.3/us_aea.js"></script>
     <header>
       Weather Should I Go?
     </header>
@@ -27,9 +30,9 @@
         <button id="Fog">Fog</button>
         <button id="Drizzle">Drizzle</button>
       </div>
-    <ul id="cities">
+    <div id="map">
 
-    </ul>
+    </div>
   </main>
   </body>
 
@@ -55,6 +58,7 @@
       wet = allWeather.list;
       for (var i = 0; i < wet.length; i++) {
         var weatherList = wet[i];
+        console.log(weatherList)
         for (var j = 0; j < weatherList.weather.length; j++) {
           var currentWeather = weatherList.weather[j].main;
           //console.log('currentWeather', currentWeather);
@@ -75,26 +79,43 @@ document.querySelector("#Haze").addEventListener("click", weatherClicked);
 document.querySelector("#Fog").addEventListener("click", weatherClicked);
 document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
 
-  var list = document.querySelector("#cities");
+  var list = document.querySelector("#map");
 
-    function weatherClicked(event) {
-      event.preventDefault
-      //console.log(event);
 
-      var weatherCities = searchCitiesByWeather(event.srcElement.id);
 
-      for (var i = 0; i < weatherCities.length; i++) {
-        var weatherCity = weatherCities[i].name;
 
-          var newLi = document.createElement("li");
-          newLi.className = "city";
-          list.appendChild(newLi);
+  function weatherClicked(event) {
+    event.preventDefault();
+    list.innerHTML = "";
+    var weatherCities = searchCitiesByWeather(event.srcElement.id);
 
-          var cityList = document.createElement("div");
-          cityList.textContent = weatherCity;
-          newLi.appendChild(cityList);
-      }
+    var markers = [] ;
+
+    for (var i = 0; i < weatherCities.length; i++) {
+      var weatherCity = weatherCities[i].name;
+      var marker = {
+        name: weatherCity,
+        latLng: [weatherCities[i].coord.lat, weatherCities[i].coord.lon]
+      };
+      markers.push(marker);
     }
 
+
+    $('#map').vectorMap({
+      map: 'us_aea',
+      scaleColors: ['#C8EEFF', '#0071A4'],
+      normalizeFunction: 'polynomial',
+      hoverOpacity: 0.7,
+      hoverColor: false,
+      markerStyle: {
+        initial: {
+          fill: '#F8E23B',
+          stroke: '#383f47'
+        }
+      },
+      backgroundColor: '#97CADB',
+      markers: markers
+    })
+  }
+
     </script>
-</html>

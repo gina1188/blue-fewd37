@@ -37,13 +37,9 @@ button {
   height: auto;
   display: inline-block;
 }
-
-#cities {
-  text-decoration: none;
-  font-family: Arial;
-  font-size: 14px;
-  text-align: center;
-  list-style-type: none;
+#map {
+  width: 100%;
+  height: 500px;
   margin-top: 50px;
 }
 
