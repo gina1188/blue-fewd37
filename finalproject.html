@@ -43,22 +43,24 @@
 
     var wet = "";
     var allWeather = null;
-    var results = [];
+    var results;
 
     function resultsReceived(data) {
       allWeather = data;
     };
 
     function searchCitiesByWeather(weatherCondition) {
+      results = [];
+
       if (allWeather == null) {
         alert("Weather data hasn't downloaded yet. Try again in a second.");
-        return [];
+        return results;
       }
 
       wet = allWeather.list;
       for (var i = 0; i < wet.length; i++) {
         var weatherList = wet[i];
-        console.log(weatherList)
+        //console.log(weatherList)
         for (var j = 0; j < weatherList.weather.length; j++) {
           var currentWeather = weatherList.weather[j].main;
           //console.log('currentWeather', currentWeather);
@@ -79,14 +81,12 @@ document.querySelector("#Haze").addEventListener("click", weatherClicked);
 document.querySelector("#Fog").addEventListener("click", weatherClicked);
 document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
 
-  var list = document.querySelector("#map");
-
-
-
-
   function weatherClicked(event) {
     event.preventDefault();
-    
+
+    $(".jvectormap-tip").remove();
+    $("#map").replaceWith($("<div>").attr("id", "map"));
+
     var weatherCities = searchCitiesByWeather(event.srcElement.id);
 
     var markers = [] ;
@@ -99,7 +99,6 @@ document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
       };
       markers.push(marker);
     }
-
 
     $('#map').vectorMap({
       map: 'us_aea',
@@ -115,6 +114,7 @@ document.querySelector("#Drizzle").addEventListener("click", weatherClicked);
       },
       backgroundColor: '#97CADB',
       markers: markers
+
     })
   }
 
