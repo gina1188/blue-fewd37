@@ -1,10 +1,18 @@
-
-header {
-  font-family: Impact;
+.container {
+  display:inline-block;
+}
+.nav {
+  font-family: Brush Script MT, cursive, bold;
   font-size: 75px;
   text-align: center;
-  margin-top: 60px;
+  padding: 50px;
 }
+
+.main {
+  text-align: center;
+  padding-top: 50px;
+}
+
 body {
   background-color: #97CADB;
 }
@@ -18,24 +26,39 @@ main {
 button {
   width: 155px;
   height: 65px;
-  border-radius: 10%;
+  border-radius: 5px;
   padding: 40px 10px 10px 10px;
   font-family: Arial;
   font-size: 16px;
   background-color: #5CDFE6;
   margin: auto;
+
 }
+
+ul  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li  {
+  float:left;
+  font-size: 40px;
+  padding: 25px 25px;
+}
+
 
 #firstrow {
   width:auto;
   height: auto;
-  display: inline-block;
+  display: inline-flex;
 }
 
 #secondrow {
   width:auto;
   height: auto;
-  display: inline-block;
+  display: inline-flex;
 }
 #map {
   width: 100%;

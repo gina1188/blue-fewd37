@@ -10,13 +10,22 @@
     <link rel="stylesheet" href="jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.css" media="screen" charset="utf-8">
     <script type="text/javascript" src="jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.min.js"></script>
     <script type="text/javascript" src="jquery-jvectormap-2.0.3/us_aea.js"></script>
-    <header>
-      Weather Should I Go?
-    </header>
   </head>
+
   <body>
-    <main>
-      <div id="firstrow">
+  <div class="container">
+      <div class="nav">
+      <h1>Weather Should I go?</h1>
+      <ul>
+        <li>Current Weather</li>
+        <li>Weather in Three Days</li>
+        <li>Search By City</li>
+        <li>Email Sign Up</li>
+      </ul>
+      </div>
+    <div class="main">
+      <h2>Click on the weather and see where you can go!</h2>
+    <div id="firstrow">
         <button id="Clouds">Clouds</button>
         <button id="Clear">Clear</button>
         <button id="Snow">Snow</button>
@@ -30,10 +39,11 @@
         <button id="Fog">Fog</button>
         <button id="Drizzle">Drizzle</button>
       </div>
+    </div>
     <div id="map">
 
     </div>
-  </main>
+  </div>
   </body>
 
     <script>
@@ -60,7 +70,7 @@
       wet = allWeather.list;
       for (var i = 0; i < wet.length; i++) {
         var weatherList = wet[i];
-        //console.log(weatherList)
+        console.log(weatherList)
         for (var j = 0; j < weatherList.weather.length; j++) {
           var currentWeather = weatherList.weather[j].main;
           //console.log('currentWeather', currentWeather);
